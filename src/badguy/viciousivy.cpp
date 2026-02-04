@@ -160,4 +160,10 @@ ViciousIvy::collision_squished(MovingObject& object)
   return true;
 }
 
+//NEW CUSTOM STUFF vvv
+void ViciousIvy::set_type(int new_type) {
+  m_type = new_type;
+  on_type_change(0); 
+}
+
 /* EOF */

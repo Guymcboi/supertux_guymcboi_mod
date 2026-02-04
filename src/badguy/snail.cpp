@@ -464,4 +464,14 @@ Snail::is_portable() const
   return (state == STATE_FLAT || m_frozen) && !m_ignited;
 }
 
+//NEW CUSTOM STUFF vvv
+void Snail::set_type(int new_type) {
+  m_type = new_type;
+  on_type_change(0); 
+
+  if (m_type == CORRUPTED) {
+    m_guard_timer.start(SNAIL_GUARD_DELAY);
+  }
+}
+
 /* EOF */

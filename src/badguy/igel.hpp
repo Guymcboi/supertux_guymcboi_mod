@@ -46,6 +46,9 @@ public:
   virtual GameObjectTypes get_types() const override;
   virtual std::string get_default_sprite_name() const override;
 
+  //NEW CUSTOM STUFF vvv
+  void set_type(int new_type);
+
 private:
   enum Type { NORMAL, CORRUPTED };
   enum State { STATE_NORMAL, STATE_CHARGING, STATE_ROLLING };

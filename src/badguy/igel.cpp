@@ -278,4 +278,10 @@ Igel::get_normal_walk_speed() const
   return m_type == CORRUPTED ? IGEL_CORRUPTED_SPEED : IGEL_NORMAL_SPEED;
 }
 
+//NEW CUSTOM STUFF vvv
+void Igel::set_type(int new_type) {
+  m_type = new_type;
+  on_type_change(0); 
+}
+
 /* EOF */

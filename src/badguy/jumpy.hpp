@@ -44,6 +44,9 @@ public:
   GameObjectTypes get_types() const override;
   std::string get_default_sprite_name() const override;
 
+  //NEW CUSTOM STUFF vvv
+  void set_type(int new_type);
+
 protected:
   virtual std::vector<Direction> get_allowed_directions() const override;
 

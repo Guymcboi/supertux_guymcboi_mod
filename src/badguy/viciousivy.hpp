@@ -43,6 +43,9 @@ public:
   virtual void active_update(float dt_sec) override;
   virtual bool is_snipable() const override { return true; }
 
+  //NEW CUSTOM STUFF vvv
+  void set_type(int new_type);
+
 protected:
   virtual std::string get_explosion_sprite() const;
   virtual bool collision_squished(MovingObject& object) override;

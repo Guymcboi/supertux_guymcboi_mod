@@ -51,6 +51,9 @@ public:
   virtual void ungrab(MovingObject& , Direction dir_) override;
   virtual void grab(MovingObject&, const Vector& pos, Direction dir_) override;
 
+  //NEW CUSTOM STUFF vvv
+  void set_type(int new_type);
+
 protected:
   virtual bool collision_squished(MovingObject& object) override;
 

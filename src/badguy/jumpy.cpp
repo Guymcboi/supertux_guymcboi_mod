@@ -168,4 +168,10 @@ Jumpy::get_allowed_directions() const
   return {};
 }
 
+//NEW CUSTOM STUFF vvv
+void Jumpy::set_type(int new_type) {
+  m_type = new_type;
+  on_type_change(0); 
+}
+
 /* EOF */
