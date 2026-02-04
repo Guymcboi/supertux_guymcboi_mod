@@ -156,6 +156,9 @@
   (object
     (class "totem")
     (icon "images/creatures/totem/walking1.png"))
+  (object
+    (class "experiencedleaf")
+    (icon "images/creatures/totem/walking1.png"))
  )
 
  (objectgroup
