@@ -38,11 +38,12 @@ const float ROLL_EASE_TIMER = 0.5f;
 const float ROLL_COOLDOWN = 1.f;
 
 const std::string CORRUPTED_SHARD_SPRITE = "images/creatures/granito/corrupted/big/root_spike.sprite";
+const std::string Igel::DEFAULT_SPRITE = "images/creatures/igel/igel.sprite";
 
 } // namespace
 
-Igel::Igel(const ReaderMapping& reader) :
-  WalkingBadguy(reader, "images/creatures/igel/igel.sprite", "left", "right"),
+Igel::Igel(const ReaderMapping& reader, std::string sprite) :
+  WalkingBadguy(reader, sprite, "left", "right"),
   m_state(STATE_NORMAL),
   m_roll_timer(),
   m_roll_cooldown(),

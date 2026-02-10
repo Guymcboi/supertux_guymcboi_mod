@@ -22,7 +22,7 @@
 
 #include "supertux/timer.hpp"
 
-class Igel final : public WalkingBadguy
+class Igel : public WalkingBadguy
 {
 public:
   Igel(const ReaderMapping& reader);
@@ -49,7 +49,7 @@ public:
   //NEW CUSTOM STUFF vvv
   void set_type(int new_type);
 
-private:
+protected:
   enum Type { NORMAL, CORRUPTED };
   enum State { STATE_NORMAL, STATE_CHARGING, STATE_ROLLING };
 
@@ -59,7 +59,7 @@ private:
   void stop_rolling(bool bonk = false);
   float get_normal_walk_speed() const;
 
-private:
+protected:
   State m_state;
   Timer m_roll_timer;
   Timer m_roll_cooldown;
