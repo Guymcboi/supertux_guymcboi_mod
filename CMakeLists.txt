@@ -176,8 +176,13 @@ add_package(TARGET fmt
   PKG fmt PKG_USE fmt::fmt CONFIG REQUIRED PKG_CONFIG fmt)
 add_package(TARGET glm
   PKG glm PKG_USE glm::glm CONFIG REQUIRED PKG_CONFIG glm)
-add_package(TARGET Freetype
-  PKG Freetype PKG_USE Freetype::Freetype CONFIG REQUIRED PKG_CONFIG freetype2)
+# Manually define Freetype instead of using the wrapper, as I was having trouble with freetype 
+find_package(Freetype REQUIRED)
+if(NOT TARGET Freetype)
+    add_library(Freetype ALIAS Freetype::Freetype)
+endif()
+# add_package(TARGET Freetype
+  # PKG Freetype PKG_USE Freetype::Freetype CONFIG REQUIRED PKG_CONFIG freetype2)
 if(NOT USE_SYSTEM_SDL2_TTF)
   # System-installed SDL2_TTF will not have RAQM support, so no need to look for that.
   add_package(TARGET RAQM
