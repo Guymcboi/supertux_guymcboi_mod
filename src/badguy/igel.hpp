@@ -25,7 +25,9 @@
 class Igel : public WalkingBadguy
 {
 public:
-  Igel(const ReaderMapping& reader);
+  const static std::string DEFAULT_SPRITE;
+
+  Igel(const ReaderMapping& reader, std::string sprite = DEFAULT_SPRITE);
 
   virtual void active_update(float dt_sec) override;
   virtual void collision_solid(const CollisionHit &hit) override;
