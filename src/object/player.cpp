@@ -1979,7 +1979,7 @@ Player::add_bonus(BonusType type, bool animate)
 }
 
 bool
-Player::set_bonus(BonusType type, bool animate)
+Player::set_bonus(BonusType type, bool animate, bool pocket)
 {
   if (m_dying) {
     return false;
@@ -2005,6 +2005,10 @@ Player::set_bonus(BonusType type, bool animate)
       else
         set_action("grow", m_dir , 1);
     }
+    else if (type == BONUS_GROWUP) {
+      // force-change Tux's sprite immediately when growing up
+      m_reset_action = true;
+    }
   }
 
   if (type == BONUS_NONE) {
@@ -2017,7 +2021,8 @@ Player::set_bonus(BonusType type, bool animate)
 
   if (type > BONUS_GROWUP)
   {
-    m_player_status.add_item_to_pocket(get_bonus(), this);
+    if (pocket)
+      m_player_status.add_item_to_pocket(get_bonus(), this);
 
     if (!m_second_growup_sound_timer.started() && type != get_bonus())
     {
