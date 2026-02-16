@@ -1,4 +1,4 @@
-//  SuperTux - Experienced Leaf
+//  SuperTux - Bush Igel
 //  Copyright (C) 2026 e
 //
 //  This program is free software: you can redistribute it and/or modify
@@ -19,6 +19,8 @@
 
 #include "badguy/igel.hpp"
 
+#include "collision/collision_system.hpp"
+
 class BushIgel final : public Igel
 {
 public:
@@ -31,6 +33,20 @@ public:
   virtual GameObjectClasses get_class_types() const override { return WalkingBadguy::get_class_types().add(typeid(BushIgel)); }
 
   std::string get_default_sprite_name() const override;
+
+  virtual void active_update(float dt_sec) override;
+
+protected:
+  virtual void on_type_change(int old_type) override;
+
+private:
+  float m_spawn_timer;
+  float m_spawn_length;
+
+  float get_tile_spawn_pos_offset(const Tile& tile);
+  void summon_root();
+  bool should_summon_root(const Rectf& bbox);
+  void summon_ivy();
 
 private:
   BushIgel(const BushIgel&) = delete;
