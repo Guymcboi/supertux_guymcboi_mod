@@ -59,6 +59,7 @@
 #include "badguy/rcrystallo.hpp"
 #include "badguy/root.hpp"
 #include "badguy/root_sapling.hpp"
+#include "badguy/roottrap.hpp"
 #include "badguy/short_fuse.hpp"
 #include "badguy/skydive.hpp"
 #include "badguy/smartball.hpp"
@@ -226,6 +227,7 @@ GameObjectFactory::init_factories()
   add_factory<RCrystallo>("rcrystallo", OBJ_PARAM_DISPENSABLE);
   add_factory<Root>("root");
   add_factory<RootSapling>("root_sapling");
+  add_factory<RootTrap>("roottrap");
   add_factory<SCrystallo>("scrystallo", OBJ_PARAM_DISPENSABLE);
   add_factory<ShortFuse>("short_fuse", OBJ_PARAM_DISPENSABLE);
   add_factory<SSpiky>("sspiky", OBJ_PARAM_DISPENSABLE);

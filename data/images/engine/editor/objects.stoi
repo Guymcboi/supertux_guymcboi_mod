@@ -162,6 +162,9 @@
   (object
     (class "bushigel")
     (icon "images/creatures/totem/walking1.png"))
+  (object
+    (class "roottrap")
+    (icon "images/creatures/mole/corrupted/root_base.png"))
  )
 
  (objectgroup
